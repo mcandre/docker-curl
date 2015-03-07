@@ -1,0 +1,7 @@
+FROM ubuntu:12.04
+MAINTAINER Andrew Pennebaker <andrew.pennebaker@gmail.com>
+
+RUN apt-get update
+RUN apt-get install -y curl
+
+ENTRYPOINT ["/usr/bin/curl", "-s"]
