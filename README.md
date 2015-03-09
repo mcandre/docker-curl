@@ -78,6 +78,12 @@ $ docker run --rm mcandre/docker-curl http://ron-swanson-quotes.herokuapp.com/qu
 {"quote":"Never half-ass two things. Whole-ass one thing."}
 ```
 
+## Publish
+
+```
+$ docker push mcandre/docker-curl
+```
+
 ## Cleanup
 
 Sometimes you want to halt and delete Docker containers or images.
