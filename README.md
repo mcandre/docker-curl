@@ -59,11 +59,3 @@ $ brew install boot2docker
 ```
 > chocolatey install docker make
 ```
-
-# DEVELOPMENT
-
-## Publish
-
-```
-$ docker push mcandre/docker-curl
-```

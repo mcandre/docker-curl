@@ -10,3 +10,6 @@ run: build
 clean:
 	-docker ps -a | grep -v IMAGE | awk '{ print $$1 }' | xargs docker rm -f
 	-docker images | grep -v IMAGE | grep docker-curl | awk '{ print $$3 }' | xargs docker rmi -f
+
+publish:
+	docker push mcandre/docker-curl
