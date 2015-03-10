@@ -7,15 +7,11 @@ https://registry.hub.docker.com/u/mcandre/docker-curl/
 # EXAMPLE
 
 ```
-$ docker pull mcandre/docker-curl
-
-$ docker run --rm mcandre/docker-curl http://www.timeapi.org/utc/now
-2015-03-07T20:14:05+00:00
-
-$ docker run --rm mcandre/docker-curl http://icanhazip.com
+$ make
+docker build -t mcandre/docker-curl .
+docker run --rm mcandre/docker-curl http://icanhazip.com
 40.50.60.70
-
-$ docker run --rm mcandre/docker-curl http://ron-swanson-quotes.herokuapp.com/quotes
+docker run --rm mcandre/docker-curl http://ron-swanson-quotes.herokuapp.com/quotes && echo ""
 {"quote":"Never half-ass two things. Whole-ass one thing."}
 ```
 
@@ -23,10 +19,14 @@ $ docker run --rm mcandre/docker-curl http://ron-swanson-quotes.herokuapp.com/qu
 
 * [Docker](https://www.docker.com/)
 
+## Optional
+
+* [make](http://www.gnu.org/software/make/)
+
 ## Debian/Ubuntu
 
 ```
-$ sudo apt-get install docker.io
+$ sudo apt-get install docker.io build-essential
 ```
 
 ## RedHat/Fedora/CentOS
@@ -43,6 +43,7 @@ $ sudo yum install docker-io
 
 ### Mac OS X
 
+* [Xcode](http://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12)
 * [Homebrew](http://brew.sh/)
 * [brew-cask](http://caskroom.io/)
 
@@ -56,46 +57,13 @@ $ brew install boot2docker
 * [Chocolatey](https://chocolatey.org/)
 
 ```
-> chocolatey install docker
+> chocolatey install docker make
 ```
 
 # DEVELOPMENT
-
-## Build
-
-```
-$ git clone https://github.com/mcandre/docker-curl.git
-$ cd docker-curl/
-$ docker build -t mcandre/docker-curl .
-
-$ docker run --rm mcandre/docker-curl http://www.timeapi.org/utc/now
-2015-03-07T20:14:05+00:00
-
-$ docker run --rm mcandre/docker-curl http://icanhazip.com
-40.50.60.70
-
-$ docker run --rm mcandre/docker-curl http://ron-swanson-quotes.herokuapp.com/quotes
-{"quote":"Never half-ass two things. Whole-ass one thing."}
-```
 
 ## Publish
 
 ```
 $ docker push mcandre/docker-curl
-```
-
-## Cleanup
-
-Sometimes you want to halt and delete Docker containers or images.
-
-### Destroy all containers matching query
-
-```
-$ docker ps -a | grep -v IMAGE | grep docker-curl | awk '{ print $1 }' | xargs docker rm -f
-```
-
-### Destroy all images matching query
-
-```
-$ docker images | grep -v IMAGE | grep docker-curl | awk '{ print $3 }' | xargs docker rmi -f
 ```
