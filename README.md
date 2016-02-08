@@ -22,6 +22,7 @@ docker run --rm mcandre/docker-curl http://ron-swanson-quotes.herokuapp.com/quot
 ## Optional
 
 * [make](http://www.gnu.org/software/make/)
+* [Node.js](https://nodejs.org/en/) (for dockerlint)
 
 ## Debian/Ubuntu
 
